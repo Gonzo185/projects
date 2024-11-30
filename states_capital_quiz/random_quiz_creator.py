@@ -6,6 +6,9 @@ import os
 
 capitals = {'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix', 'Arkansas': 'Little Rock', 'California': 'Sacramento', 'Colorado': 'Denver', 'Connecticut': 'Hartford', 'Delaware': 'Dover', 'Florida': 'Tallahassee', 'Georgia': 'Atlanta', 'Hawaii': 'Honolulu', 'Idaho': 'Boise', 'Illinois': 'Springfield', 'Indiana': 'Indianapolis', 'Iowa': 'Des Moines', 'Kansas': 'Topeka', 'Kentucky': 'Frankfort', 'Louisiana': 'Baton Rouge', 'Maine': 'Augusta', 'Maryland': 'Annapolis', 'Massachusetts': 'Boston', 'Michigan': 'Lansing', 'Minnesota': 'Saint Paul', 'Mississippi': 'Jackson', 'Missouri': 'Jefferson City', 'Montana': 'Helena', 'Nebraska': 'Lincoln', 'Nevada': 'Carson City', 'New Hampshire': 'Concord', 'New Jersey': 'Trenton', 'New Mexico': 'Santa Fe', 'New York': 'Albany', 'North Carolina': 'Raleigh', 'North Dakota': 'Bismarck', 'Ohio': 'Columbus', 'Oklahoma': 'Oklahoma City', 'Oregon': 'Salem', 'Pennsylvania': 'Harrisburg', 'Rhode Island': 'Providence', 'South Carolina': 'Columbia', 'South Dakota': 'Pierre', 'Tennessee': 'Nashville', 'Texas': 'Austin', 'Utah': 'Salt Lake City', 'Vermont': 'Montpelier', 'Virginia': 'Richmond', 'Washington': 'Olympia', 'West Virginia': 'Charleston', 'Wisconsin': 'Madison', 'Wyoming': 'Cheyenne'}
 
+if os.path.isdir("/home/gonzo185/projects/states_capital_quiz/created_quizes") is False:
+   os.mkdir("/home/gonzo185/projects/states_capital_quiz/created_quizes")
+
 number = 0
 for quizNum in range(35):
 
@@ -15,13 +18,8 @@ for quizNum in range(35):
     number += 1
     question_number = 0
     answer_number = 0
-
-    if os.path.isdir("/home/gonzo185/projects/random_quiz_project/created_quizes"):
-        continue
-    else:
-        os.mkdir("/home/gonzo185/projects/random_quiz_project/created_quizes")
     
-    quiz_name = f"/home/gonzo185/projects/random_quiz_project/created_quizes/Random_Quize_Pojectcapitalsquiz{number}_modified.txt"
+    quiz_name = f"/home/gonzo185/projects/states_capital_quiz/created_quizes/Random_Quize_Pojectcapitalsquiz{number}_modified.txt"
 
     quiz = open(f'{quiz_name}', 'w',)
 
