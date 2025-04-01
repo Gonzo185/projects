@@ -1,0 +1,191 @@
+Building configuration...
+
+  
+Current configuration : 4081 bytes
+!
+! Last configuration change at 16:18:10 UTC Tue Apr 1 2025 by Gonzo185
+!
+version 15.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Router1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable password Gonzo185!
+!
+aaa new-model
+!
+!
+aaa authorization exec default local 
+!
+!
+!
+!
+!
+aaa session-id common
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip domain name Gonzo185
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+username Gonzo185 privilege 15 password 0 Gonzo185!
+!
+redundancy
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ description HEY LET'S TRY THIS AGAIN JUST TO MAKE SURE IT'S WORKING FROM THE LINUX BOX
+ ip address 1.1.1.2 255.255.255.255
+ shutdown
+!
+interface Loopback3
+ ip address 3.3.3.3 255.255.255.255
+!
+interface Loopback4
+ ip address 4.4.4.4 255.255.255.255
+!
+interface Loopback5
+ ip address 5.5.5.5 255.255.255.255
+!
+interface Loopback6
+ ip address 6.6.6.6 255.255.255.255
+!
+interface Loopback7
+ ip address 7.7.7.7 255.255.255.255
+!
+interface Loopback8
+ ip address 8.8.8.8 255.255.255.255
+!
+interface Loopback9
+ ip address 9.9.9.9 255.255.255.255
+!
+interface GigabitEthernet0/0
+ description "Hi Class!"
+ ip address 10.0.0.1 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ description Test
+ ip address 10.0.1.1 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/2
+ description Test
+ ip address 172.16.0.1 255.255.255.252
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ description "Hi Class!"
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+router ospf 1
+ network 10.0.0.0 0.0.0.255 area 0
+ network 10.0.1.0 0.0.0.255 area 0
+ network 0.0.0.0 255.255.255.255 area 0
+ default-information originate always
+!
+ip forward-protocol nd
+!
+!
+ip http server
+no ip http secure-server
+ip route 0.0.0.0 0.0.0.0 172.16.0.2 name DEFAULT_ROUTE
+ip ssh version 2
+!
+ipv6 ioam timestamp
+!
+!
+!
+!
+!
+control-plane
+!
+banner exec ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner incoming ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner login ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+!
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ transport input ssh
+line vty 5 15
+ transport input ssh
+!
+no scheduler allocate
+!
+end

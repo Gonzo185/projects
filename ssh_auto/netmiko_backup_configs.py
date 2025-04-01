@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from netmiko import ConnectHandler
 
 #host = input("Please enter hostnam or IP address: ")
@@ -48,4 +50,4 @@ for device in device_list:
     output = net_connect.send_command("show run")
     with open(f"~/projects/ssh_auto/CML_Backup_configs/{device['host']}-Configs.txt", "w") as file:
         file.write(output)
-    print(output + f"\n\n -----------------------------------------------------/n Configs for {host}/n")
+    print(output + f"\n\n -----------------------------------------------------/n Configs for {['host']}/n")
