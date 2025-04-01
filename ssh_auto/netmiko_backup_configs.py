@@ -46,6 +46,6 @@ device_list = [R1, R2, R3, R4, R5, R6]
 for device in device_list:
     net_connect = ConnectHandler(**device)
     output = net_connect.send_command("show run")
-    with open(f"{device['host']}-Configs.txt", "w") as file:
+    with open(f"~/projects/ssh_auto/CML_Backup_configs/{device['host']}-Configs.txt", "w") as file:
         file.write(output)
     print(output + f"\n\n -----------------------------------------------------/n Configs for {host}/n")
