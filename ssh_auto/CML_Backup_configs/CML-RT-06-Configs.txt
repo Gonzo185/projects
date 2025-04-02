@@ -1,16 +1,16 @@
 Building configuration...
 
   
-Current configuration : 3755 bytes
+Current configuration : 3725 bytes
 !
-! Last configuration change at 16:22:44 UTC Tue Apr 1 2025 by Gonzo185
+! Last configuration change at 09:51:52 UTC Wed Apr 2 2025
 !
 version 15.9
 service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
 !
-hostname Router3
+hostname CML-RT-06
 !
 boot-start-marker
 boot-end-marker
@@ -99,19 +99,19 @@ interface Loopback9
  ip address 9.9.9.9 255.255.255.255
 !
 interface GigabitEthernet0/0
- ip address 10.0.5.3 255.255.255.0
+ ip address 10.0.6.6 255.255.255.0
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/1
- ip address 10.0.1.3 255.255.255.0
+ ip address 10.0.7.6 255.255.255.0
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/2
- ip address 10.0.4.3 255.255.255.0
+ no ip address
  shutdown
  duplex auto
  speed auto

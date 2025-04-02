@@ -1,16 +1,16 @@
 Building configuration...
 
   
-Current configuration : 4081 bytes
+Current configuration : 4071 bytes
 !
-! Last configuration change at 16:18:10 UTC Tue Apr 1 2025 by Gonzo185
+! Last configuration change at 05:20:10 UTC Wed Apr 2 2025
 !
 version 15.9
 service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
 !
-hostname Router1
+hostname CML-RT-01
 !
 boot-start-marker
 boot-end-marker
