@@ -1,0 +1,3 @@
+int loop0
+description I'm testing out some automation reading config commands from this file
+shut
